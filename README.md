@@ -48,9 +48,22 @@ NEXT_PUBLIC_APP_URL=http://localhost:3000
 
 ### Seed Database
 
+**Option 1: Using the seed script** (generates fresh data with dynamic timestamps):
+
 ```bash
 npx tsx seed.ts
 ```
+
+**Option 2: Import sample data** from the `data/` directory (static JSON exports):
+
+```bash
+mongoimport --uri "mongodb://localhost:27017/next-auction" --collection users --jsonArray --file data/users.json
+mongoimport --uri "mongodb://localhost:27017/next-auction" --collection products --jsonArray --file data/products.json
+mongoimport --uri "mongodb://localhost:27017/next-auction" --collection auctions --jsonArray --file data/auctions.json
+mongoimport --uri "mongodb://localhost:27017/next-auction" --collection bids --jsonArray --file data/bids.json
+```
+
+> Replace the `--uri` value with your MongoDB connection string if using a remote database.
 
 ### Run Development Server
 
