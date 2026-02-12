@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import dbConnect from '@/lib/db';
 import Auction from '@/models/Auction';
+import '@/models/Product';
+import '@/models/User';
 
 export const dynamic = 'force-dynamic';
 
